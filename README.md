@@ -1,10 +1,10 @@
 # monte-carlo-clojure
 
-A Clojure library designed to ... well, that part is up to you.
+A bunch of Monte-Carlo algorithms implemented using the expressiveness of Clojure and FP.
 
 ## Usage
 
-FIXME
+Up to the inventiveness of coders everywhere.
 
 ## License
 
