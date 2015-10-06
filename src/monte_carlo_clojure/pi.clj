@@ -1,5 +1,5 @@
 (ns ^{:doc "Compute the PI number through a Monte-Carlo aproach"
-      :author "alex.gherega@gmail.com"} monte-carlo-clojure.pi
+      :author "avr.PhD. alex.gherega@gmail.com"} monte-carlo-clojure.pi
       (:use [monte-carlo-clojure.core])
       (:require [clojure.tools.logging :as log]))
 
@@ -45,6 +45,8 @@
          (reduce + (pmap gather-circle-points
                          (gen-worker-data n div)))))
 
-(defn performance-test [n]
-  (log/info (str "[sequential-run] " (time (monte-carlo-pi n))))
-  (log/info (str  "[parallel-run] " (time (pmonte-carlo-pi n 33)))))
+(defn performance-test
+  ([] (performance-test 100000000))
+  ([n]
+   (list "[sequential-run] " (time (monte-carlo-pi n))
+         "[parallel-run] " (time (pmonte-carlo-pi n 33)))))
